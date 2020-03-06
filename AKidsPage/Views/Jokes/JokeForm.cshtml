@@ -1,0 +1,51 @@
+﻿@model AKidsPage.Models.Joke
+@{
+    Layout = "_JokesLayout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>Have A Joke?</h4></div>
+        <div class="panel-body">
+            <form class="p-a-1" asp-action="JokeForm" method="post">
+                <div asp-validation-summary="ModelOnly" style="background-color: red"></div>
+                <div class="form-group">
+                    <label asp-for="Name"> Your Name please:</label>
+                    <div><span asp-validation-for="Name"> </span></div>
+                    <input class="form-control" asp-for="Name" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="KeyWord">Joke about?(one word)</label>
+                    <div><span asp-validation-for="KeyWord"> </span></div>
+                    <textarea class="form-control" rows="1" asp-for="KeyWord"></textarea>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="JokeLine">Leave Your Joke here for Reivew</label>
+                    <textarea class="form-control" rows="5" asp-for="JokeLine"></textarea>
+
+
+                </div>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

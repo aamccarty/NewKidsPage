@@ -1,0 +1,36 @@
+﻿@model List<Joke>
+@{
+    ViewData["Title"] = "Jokespage";
+    Layout = "~/Views/Shared/_JokesLayout.cshtml";
+}
+<body>
+    <div>
+        <div class="panel-body"> <h2> Jokes</h2></div>
+        <div>
+            <table class="table table-sm table-striped table-bordered">
+
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>JokeLine</th>
+                        <th>Jokster</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Joke r in Model)
+                    {
+                        <tr>
+                            <td>@r.KeyWord</td>
+                            <td>@r.JokeLine</td>
+                            <td>@r.Name</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <br />
+            <a class="nav-link" asp-controller="Jokes" asp-action="JokeForm">Submit a Joke</a>
+
+        </div>
+    </div>
+</body>
